@@ -14,7 +14,7 @@
     "@react-native-community/netinfo": "8.2.0",
     "@react-navigation/native": "^6.0.11",
     "@react-navigation/native-stack": "^6.7.0",
-    "@sendbird/uikit-react-native": "^1.0.0",
+    "@sendbird/uikit-react-native": "^1.0.2",
     "date-fns": "^2.29.1",
     "expo": "~45.0.0",
     "expo-clipboard": "~3.0.1",
