@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sendbird-uikit-sample-react-native-expo
+  description: UIKit Sample for React-Native(Expo)
+  annotations:
+    github.com/project-slug: sendbird/sendbird-uikit-sample-react-native-expo
+spec:
+  type: library
+  lifecycle: production
+  owner: dep-client-platform
+  system: sendbird-uikit

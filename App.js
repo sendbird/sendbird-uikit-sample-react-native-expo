@@ -1,83 +1,15 @@
-import React from "react";
+import React from 'react';
+import {LogBox} from 'react-native';
+import {withTouchReload} from 'react-native-touch-reload';
+import {Logger} from '@sendbird/uikit-utils';
+import AppRoot from './src/App';
+import {withAppearance} from './src/hooks/useAppearance';
+import './src/libs/notification';
 
-import * as ExpoClipboard from "expo-clipboard";
-import * as ExpoDocumentPicker from "expo-document-picker";
-import * as ExpoFS from "expo-file-system";
-import * as ExpoImagePicker from "expo-image-picker";
-import * as ExpoMediaLibrary from "expo-media-library";
-import * as ExpoNotifications from "expo-notifications";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+// Sendbird.setLogLevel(Sendbird.LogLevel.DEBUG);
+Logger.setLogLevel('warn');
+LogBox.ignoreLogs(['UIKit Warning', "Warning: Can't perform", 'FileViewer > params.deleteMessage (Function)']);
 
-import {
-  createExpoClipboardService,
-  createExpoFileService,
-  createExpoNotificationService,
-  SendbirdUIKitContainer,
-  useSendbirdChat,
-} from "@sendbird/uikit-react-native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { NavigationContainer } from "@react-navigation/native";
-import {
-  GroupChannelCreateScreen,
-  GroupChannelListScreen,
-  GroupChannelScreen,
-  SignInScreen,
-} from "./screens";
-
-const NotificationService = createExpoNotificationService(ExpoNotifications);
-const ClipboardService = createExpoClipboardService(ExpoClipboard);
-const FileService = createExpoFileService({
-  fsModule: ExpoFS,
-  imagePickerModule: ExpoImagePicker,
-  mediaLibraryModule: ExpoMediaLibrary,
-  documentPickerModule: ExpoDocumentPicker,
-});
-
-const RootStack = createNativeStackNavigator();
-
-const Navigation = () => {
-  const { currentUser } = useSendbirdChat();
-
-  return (
-    <NavigationContainer>
-      <RootStack.Navigator screenOptions={{ headerShown: false }}>
-        {!currentUser ? (
-          <RootStack.Screen name={"SignIn"} component={SignInScreen} />
-        ) : (
-          <>
-            <RootStack.Screen
-              name={"GroupChannelList"}
-              component={GroupChannelListScreen}
-            />
-            <RootStack.Screen
-              name={"GroupChannelCreate"}
-              component={GroupChannelCreateScreen}
-            />
-            <RootStack.Screen
-              name={"GroupChannel"}
-              component={GroupChannelScreen}
-            />
-          </>
-        )}
-      </RootStack.Navigator>
-    </NavigationContainer>
-  );
-};
-
-const App = () => {
-  return (
-    <SendbirdUIKitContainer
-      appId={"2D7B4CDB-932F-4082-9B09-A1153792DC8D"}
-      chatOptions={{ localCacheStorage: AsyncStorage }}
-      platformServices={{
-        file: FileService,
-        notification: NotificationService,
-        clipboard: ClipboardService,
-      }}
-    >
-      <Navigation />
-    </SendbirdUIKitContainer>
-  );
-};
+const App = withTouchReload(withAppearance(AppRoot));
 
 export default App;
