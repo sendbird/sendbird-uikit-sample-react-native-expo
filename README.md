@@ -10,15 +10,16 @@ Step 1: Install dependencies
 yarn install
 ```
 
-Step 2: Fill in your Sendbird application ID in the APP_ID field of src/env.ts
+Step 2: Fill in your Sendbird application ID in the `APP_ID` field of [`src/env.ts`](src/env.ts)
 
 ## Usage
+
+> **NOTE**: Starting from version @sendbird/uikit-react-native@2.5.0, we no longer support Expo Go on Android.
+> Please use [EAS Build](https://docs.expo.dev/build/setup/#build-for-android-emulatordevice-or-ios-simulator) instead.
 
 ### Expo Go QR
 
 To use Expo Go QR, run the following command:
-
-> **NOTE**: Starting from version @sendbird/uikitreact-native@2.5.0, we no longer support Expo Go on Android. Please use EAS Build instead.
 
 ```shell
 yarn start
@@ -30,6 +31,17 @@ To use iOS, run the following command:
 
 ```shell
 yarn ios
+```
+
+### Web
+
+> **NOTE**: While it is possible to run in a web environment
+> please note that Expo SDK is not fully compatible with web environments and is not officially supported. (We do not guarantee functionality related to this.)
+
+To test Web, run the following command:
+
+```shell
+yarn web
 ```
 
 ## Upgrading Expo SDK
