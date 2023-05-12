@@ -1,10 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import { useGroupChannel } from '@sendbird/uikit-chat-hooks';
-import { createGroupChannelFragment, useSendbirdChat } from '@sendbird/uikit-react-native';
+import { useGroupChannel } from "@sendbird/uikit-chat-hooks";
+import {
+  createGroupChannelFragment,
+  useSendbirdChat,
+} from "@sendbird/uikit-react-native";
 
-import { useAppNavigation } from '../../../hooks/useAppNavigation';
-import { Routes } from '../../../libs/navigation';
+import { useAppNavigation } from "../../../hooks/useAppNavigation";
+import { Routes } from "../../../libs/navigation";
 
 /**
  * Example for customize navigation header with DomainContext
@@ -77,6 +80,7 @@ const GroupChannelScreen = () => {
   return (
     <GroupChannelFragment
       channel={channel}
+      searchItem={params.searchItem}
       onPressMediaMessage={(fileMessage, deleteMessage) => {
         // Navigate to media viewer
         navigation.navigate(Routes.FileViewer, {

@@ -1,9 +1,13 @@
+# sendbird-uikit-sample-react-native-expo
+
+This sample demonstrates how to use Sendbird UIKit for React Native with Expo.
+
 ## Installation
 
 Step 1: Install dependencies
 
 ```shell
-expo install
+yarn install
 ```
 
 Step 2: Fill in your Sendbird application ID in the APP_ID field of src/env.ts
@@ -13,6 +17,8 @@ Step 2: Fill in your Sendbird application ID in the APP_ID field of src/env.ts
 ### Expo Go QR
 
 To use Expo Go QR, run the following command:
+
+> **NOTE**: Starting from version @sendbird/uikitreact-native@2.5.0, we no longer support Expo Go on Android. Please use EAS Build instead.
 
 ```shell
 yarn start
@@ -24,14 +30,6 @@ To use iOS, run the following command:
 
 ```shell
 yarn ios
-```
-
-### Android
-
-To use Android, run the following command:
-
-```shell
-yarn android
 ```
 
 ## Upgrading Expo SDK

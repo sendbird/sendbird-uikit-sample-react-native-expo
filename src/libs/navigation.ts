@@ -48,6 +48,7 @@ export enum Routes {
   GroupChannelInvite = "GroupChannelInvite",
   Settings = "Settings",
   FileViewer = "FileViewer",
+  MessageSearch = "MessageSearch",
 }
 
 type ChannelUrlParams = {
@@ -98,7 +99,10 @@ export type RouteParamsUnion =
     }
   | {
       route: Routes.GroupChannel;
-      params: ChannelUrlParams;
+      params: {
+        channelUrl: string;
+        searchItem?: { startingPoint: number };
+      };
     }
   | {
       route: Routes.GroupChannelSettings;
@@ -134,6 +138,10 @@ export type RouteParamsUnion =
     }
   | {
       route: Routes.GroupChannelInvite;
+      params: ChannelUrlParams;
+    }
+  | {
+      route: Routes.MessageSearch;
       params: ChannelUrlParams;
     }
   /** OpenChannel screens **/

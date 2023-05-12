@@ -1,14 +1,18 @@
-import React from 'react';
+import React from "react";
 
-import { useGroupChannel } from '@sendbird/uikit-chat-hooks';
-import { createGroupChannelSettingsFragment, useSendbirdChat } from '@sendbird/uikit-react-native';
+import { useGroupChannel } from "@sendbird/uikit-chat-hooks";
+import {
+  createGroupChannelSettingsFragment,
+  useSendbirdChat,
+} from "@sendbird/uikit-react-native";
 
-import { useAppNavigation } from '../../../hooks/useAppNavigation';
-import { Routes } from '../../../libs/navigation';
+import { useAppNavigation } from "../../../hooks/useAppNavigation";
+import { Routes } from "../../../libs/navigation";
 
 const GroupChannelSettingsFragment = createGroupChannelSettingsFragment();
 const GroupChannelSettingsScreen = () => {
-  const { navigation, params } = useAppNavigation<Routes.GroupChannelSettings>();
+  const { navigation, params } =
+    useAppNavigation<Routes.GroupChannelSettings>();
 
   const { sdk } = useSendbirdChat();
   const { channel } = useGroupChannel(sdk, params.channelUrl);
@@ -24,6 +28,10 @@ const GroupChannelSettingsScreen = () => {
       onPressMenuModeration={() => {
         // Navigate to group channel moderation
         navigation.push(Routes.GroupChannelModeration, params);
+      }}
+      onPressMenuSearchInChannel={() => {
+        // Navigate to group channel message search
+        navigation.push(Routes.MessageSearch, params);
       }}
       onPressMenuMembers={() => {
         // Navigate to group channel members
