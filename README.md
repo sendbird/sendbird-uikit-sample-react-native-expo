@@ -36,7 +36,7 @@ yarn ios
 ### Web
 
 > **NOTE**: While it is possible to run in a web environment
-> please note that Expo SDK is not fully compatible with web environments and is not officially supported. (We do not guarantee functionality related to this.)
+> please note that Expo SDK is not fully compatible with web environments and we do not officially support the web. (We do not guarantee functionality related to this.)
 
 To test Web, run the following command:
 
