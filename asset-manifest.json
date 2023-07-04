@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.js": "/sendbird-uikit-sample-react-native-expo/static/js/main.3411a75b.js",
+    "main.js": "/sendbird-uikit-sample-react-native-expo/static/js/main.f5efa333.js",
     "static/js/356.c8f8f5ee.chunk.js": "/sendbird-uikit-sample-react-native-expo/static/js/356.c8f8f5ee.chunk.js",
     "static/js/256.24f80afe.chunk.js": "/sendbird-uikit-sample-react-native-expo/static/js/256.24f80afe.chunk.js",
-    "static/js/729.2f0bf342.js": "/sendbird-uikit-sample-react-native-expo/static/js/729.2f0bf342.js",
+    "static/js/801.65fe3d2f.js": "/sendbird-uikit-sample-react-native-expo/static/js/801.65fe3d2f.js",
     "favicon.ico": "/sendbird-uikit-sample-react-native-expo/favicon.ico",
     "index.html": "/sendbird-uikit-sample-react-native-expo/index.html",
     "static/media/imgOpenchannel.png": "/sendbird-uikit-sample-react-native-expo/static/media/imgOpenchannel.370e7a9e343b0d06ddcf.png",
@@ -50,13 +50,13 @@
     "favicon-16.png": "/sendbird-uikit-sample-react-native-expo/favicon-16.png",
     "serve.json": "/sendbird-uikit-sample-react-native-expo/serve.json",
     "manifest.json": "/sendbird-uikit-sample-react-native-expo/manifest.json",
-    "main.3411a75b.js.map": "/sendbird-uikit-sample-react-native-expo/static/js/main.3411a75b.js.map",
+    "main.f5efa333.js.map": "/sendbird-uikit-sample-react-native-expo/static/js/main.f5efa333.js.map",
     "356.c8f8f5ee.chunk.js.map": "/sendbird-uikit-sample-react-native-expo/static/js/356.c8f8f5ee.chunk.js.map",
     "256.24f80afe.chunk.js.map": "/sendbird-uikit-sample-react-native-expo/static/js/256.24f80afe.chunk.js.map",
-    "729.2f0bf342.js.map": "/sendbird-uikit-sample-react-native-expo/static/js/729.2f0bf342.js.map"
+    "801.65fe3d2f.js.map": "/sendbird-uikit-sample-react-native-expo/static/js/801.65fe3d2f.js.map"
   },
   "entrypoints": [
-    "static/js/729.2f0bf342.js",
-    "static/js/main.3411a75b.js"
+    "static/js/801.65fe3d2f.js",
+    "static/js/main.f5efa333.js"
   ]
 }
