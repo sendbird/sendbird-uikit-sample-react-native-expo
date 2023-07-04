@@ -2304,39 +2304,39 @@
   resolved "https://registry.yarnpkg.com/@sendbird/react-native-scrollview-enhancer/-/react-native-scrollview-enhancer-0.2.1.tgz#25de4af78293978a4c0ef6fddee25d822a364c46"
   integrity sha512-LN+Tm+ZUkE2MBVreg/JI8SVr8SOKRteZN0YFpGzRtbKkP45+pKyPN4JQPf73eFx7qO8zDL+TUVyzz/1MOnIK7g==
 
-"@sendbird/uikit-chat-hooks@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@sendbird/uikit-chat-hooks/-/uikit-chat-hooks-3.0.0.tgz#9c9def8f2ba14739dd3c5365db293d0bd19d89f4"
-  integrity sha512-jhDj4KkoYIR4ro3gjojx6lQU4M3wDNDocOJ6Rsg6byq1uzcCDfTXQtZMJAMrn6I3VY0WpDzKsKsU8rcrRSFTcg==
+"@sendbird/uikit-chat-hooks@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@sendbird/uikit-chat-hooks/-/uikit-chat-hooks-3.0.1.tgz#1bddb897db9ebd9980f7d6d1e6c2f3f613b16bf7"
+  integrity sha512-16C5dZGeWPSrM0qAFUsUoYrxktsKQpcvbeD4Jo45VLXchryKq8ythSohsOIVNNvSACPzVyvvgA+qytw0QJYsww==
   dependencies:
-    "@sendbird/uikit-utils" "3.0.0"
+    "@sendbird/uikit-utils" "3.0.1"
 
-"@sendbird/uikit-react-native-foundation@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@sendbird/uikit-react-native-foundation/-/uikit-react-native-foundation-3.0.0.tgz#afd6ea95ff04f1157fa2afe5190bffb3ac8362d3"
-  integrity sha512-Ik7p8G/2eTzdw96yUqoh3y29LgvE5GbYJeTwdAcr/TElAArfynJqu4wutje5YLEc2VHO7+cjSeBfIyhd0u+Bnw==
+"@sendbird/uikit-react-native-foundation@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@sendbird/uikit-react-native-foundation/-/uikit-react-native-foundation-3.0.1.tgz#8d222b85d1e893b875b82df7e07b2ffbc2e9a98a"
+  integrity sha512-DEeYT9VJeyiuIw9EeriRNWN3QUd0ZZPIoLS4W8AAkxAPGrjWmJKHiuOEpngZnmKRewpAgRDPF+lamoQr42YN5Q==
   dependencies:
-    "@sendbird/uikit-utils" "3.0.0"
+    "@sendbird/uikit-utils" "3.0.1"
 
-"@sendbird/uikit-react-native@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@sendbird/uikit-react-native/-/uikit-react-native-3.0.0.tgz#fa362533fc754c29f7892243b5eed5de97ba6c5b"
-  integrity sha512-PrfMF1Bm8CGy65tc2Kb7jFHiymnUg5o3ybEUhmIS/vkNZVMa2OvqIXB4PIk4oqiYAietLW51aQyK2Ozgq4Nncg==
+"@sendbird/uikit-react-native@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@sendbird/uikit-react-native/-/uikit-react-native-3.0.1.tgz#646a09b723f50ce9dacfc64e72ec49440333433e"
+  integrity sha512-OV4wUFOjvrD0mslKgAP4+Qfn9qLoC5urvYXYzfQJFx6l3UGJXPBfwrRc+Uo2EZZ5SzX6Vf9NjdV4oa+XdBmfFg==
   dependencies:
-    "@sendbird/uikit-chat-hooks" "3.0.0"
-    "@sendbird/uikit-react-native-foundation" "3.0.0"
+    "@sendbird/uikit-chat-hooks" "3.0.1"
+    "@sendbird/uikit-react-native-foundation" "3.0.1"
     "@sendbird/uikit-tools" "^0.0.1-alpha.38"
-    "@sendbird/uikit-utils" "3.0.0"
+    "@sendbird/uikit-utils" "3.0.1"
 
 "@sendbird/uikit-tools@^0.0.1-alpha.38":
   version "0.0.1-alpha.40"
   resolved "https://registry.yarnpkg.com/@sendbird/uikit-tools/-/uikit-tools-0.0.1-alpha.40.tgz#2c54d1bc22c7067f9bbe83b2028f87f33d71c706"
   integrity sha512-Ld23LpXxN6XJayNayD/wcOa6mRKvR2cy1Qk+QHt9SLO/z3K1uglPI+x89JHOmaPzu3vbUkosM7iTjFJ0ab6LeQ==
 
-"@sendbird/uikit-utils@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@sendbird/uikit-utils/-/uikit-utils-3.0.0.tgz#485f3ba853af556ded8f2c6245cbd5cb6abef308"
-  integrity sha512-GW3DlnhA2eGzbFsQLD3pcP9y202/U/nZDeOC27jEnmtJvEDZrJKEpCl7egWXTTVrF3cEJaMhUr5l7AGPy2DYWg==
+"@sendbird/uikit-utils@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@sendbird/uikit-utils/-/uikit-utils-3.0.1.tgz#04cbe3b55ffefaa9d2f231ed15473ba127cff821"
+  integrity sha512-aqZEI87qRG4gxBRQ2MQ3bpo4HhLv/0bmbVPV4wGIsDU0f6Wpm8e1cM16cfBHdDxBxieaI9fFKlTh62QsHRS6Dg==
   dependencies:
     date-fns "^2.28.0"
     string.prototype.matchall "^4.0.7"

@@ -130,11 +130,11 @@ const Navigations = () => {
   }, []);
 
   useEffect(() => {
-    const { remove } = AppState.addEventListener("change", async () => {
+    const sub = AppState.addEventListener("change", async () => {
       const count = await sdk.groupChannel.getTotalUnreadMessageCount();
       Notifications.setBadgeCountAsync(count);
     });
-    return () => remove();
+    return () => sub.remove();
   }, []);
 
   return (
