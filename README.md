@@ -15,7 +15,7 @@ Step 2: Fill in your Sendbird application ID in the `APP_ID` field of [`src/env.
 ## Usage
 
 > **NOTE**: Starting from version @sendbird/uikit-react-native@2.5.0, we no longer support Expo Go on Android.
-> Please use [EAS Build](https://docs.expo.dev/build/setup/#build-for-android-emulatordevice-or-ios-simulator) instead.
+> Please use [EAS Build](https://docs.expo.dev/build/setup/#build-for-android-emulatordevice-or-ios-simulator) or [Prebuild](https://docs.expo.dev/workflow/prebuild/) instead.
 
 ### Expo Go QR
 
