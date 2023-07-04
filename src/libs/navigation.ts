@@ -231,6 +231,7 @@ export const navigationActions = {
         // navigationRef.setParams(params);
         navigationRef.dispatch(StackActions.replace(name, params));
       } else {
+        // @ts-expect-error
         navigationRef.navigate<Routes>(name, params);
       }
     }
