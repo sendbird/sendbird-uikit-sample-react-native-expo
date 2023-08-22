@@ -2499,44 +2499,44 @@
     component-type "^1.2.1"
     join-component "^1.1.0"
 
-"@sendbird/chat@^4.9.3":
-  version "4.9.3"
-  resolved "https://registry.yarnpkg.com/@sendbird/chat/-/chat-4.9.3.tgz#fa78e55d5005cda721ab3ad8169f2619e3be11ba"
-  integrity sha512-TvK32c8L54QedDrdshA/tKgv9UJUfKXDPADIu0IORrfsWKqp3X4bqYTb40IYSX31v6ksK8rbJTofz3y3bUVSRg==
+"@sendbird/chat@^4.9.9":
+  version "4.9.9"
+  resolved "https://registry.yarnpkg.com/@sendbird/chat/-/chat-4.9.9.tgz#c5b17fcec787ab7ffd41450bd9a195dcae2b47c5"
+  integrity sha512-4vTFroq1p+iFbWT5qJohuC68sUBt83TvI6ZhUxPMxaRtulb810VetJR1Qn+xr9oNQtZY+q1n9y+L7W4tEq3ATw==
 
-"@sendbird/uikit-chat-hooks@3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@sendbird/uikit-chat-hooks/-/uikit-chat-hooks-3.0.4.tgz#cc7af821db19502586bdfb723e06c481d26e446b"
-  integrity sha512-e4jaTu56ok6sB+TlazVugQB6c1Ds/QXe2l03zzaAyF/Qd1+xiSjD6yvYCcZpLriMUW2cfcLZlMLfEBsTkeh53Q==
+"@sendbird/uikit-chat-hooks@3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@sendbird/uikit-chat-hooks/-/uikit-chat-hooks-3.1.0.tgz#a9231606d7387ad26d76a095596dad5f5816ed49"
+  integrity sha512-+5ZD+jjp9O2eyXgd91VAm3uLNVbVDTWL+gdVZwOjSeHMLZWtxVgP+LyQPp5YhHbLl5Q3ZzbT9eMjsAT7rwI18A==
   dependencies:
-    "@sendbird/uikit-utils" "3.0.4"
+    "@sendbird/uikit-utils" "3.1.0"
 
-"@sendbird/uikit-react-native-foundation@3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@sendbird/uikit-react-native-foundation/-/uikit-react-native-foundation-3.0.4.tgz#4f6ba247eaa24d23ca69362c8d040888cf70fd57"
-  integrity sha512-Zjez4S1sg1/0SPWrxhv+zrix3oXUxj1hxr0TFsOzn8pj2yljxIGg5AGaRKQ4u1XBWusk4tjFEwNd/T8zPTILwg==
+"@sendbird/uikit-react-native-foundation@3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@sendbird/uikit-react-native-foundation/-/uikit-react-native-foundation-3.1.0.tgz#99a3bf899f7a7b0e830b61c9e543c718462787d1"
+  integrity sha512-rE8k4tgCIrSJF9UM9pmVan41e/3ae05Pz2jOa+d0Erq8mJoBAkZytjcw49XQ2aY3a2l1soW0h92BI390aEz7Fw==
   dependencies:
-    "@sendbird/uikit-utils" "3.0.4"
+    "@sendbird/uikit-utils" "3.1.0"
 
-"@sendbird/uikit-react-native@^3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@sendbird/uikit-react-native/-/uikit-react-native-3.0.4.tgz#26d882aa5bfb9541a1a7c5f55e28083da76d0594"
-  integrity sha512-fk2yUmhgTNVjd+s5+2sjbxOj+UtoebD/uMMhv5uYrVjNhTcaoxMuP6FtMYZypdCgb6zp7o/oOpFruHtYUHAMcA==
+"@sendbird/uikit-react-native@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@sendbird/uikit-react-native/-/uikit-react-native-3.1.0.tgz#9b44b6e01aaa9afc9c83f45e3b501ec3fe3283c1"
+  integrity sha512-3hkhp/JNd3VwVrcazXVx3BqSoh8UdCo0mwf1dztzXY3R1HiK/oIrBYwgwNhX2vWGWuDqPEXjawnZ2CelTuCWFA==
   dependencies:
-    "@sendbird/uikit-chat-hooks" "3.0.4"
-    "@sendbird/uikit-react-native-foundation" "3.0.4"
+    "@sendbird/uikit-chat-hooks" "3.1.0"
+    "@sendbird/uikit-react-native-foundation" "3.1.0"
     "@sendbird/uikit-tools" "^0.0.1-alpha.38"
-    "@sendbird/uikit-utils" "3.0.4"
+    "@sendbird/uikit-utils" "3.1.0"
 
 "@sendbird/uikit-tools@^0.0.1-alpha.38":
   version "0.0.1-alpha.40"
   resolved "https://registry.yarnpkg.com/@sendbird/uikit-tools/-/uikit-tools-0.0.1-alpha.40.tgz#2c54d1bc22c7067f9bbe83b2028f87f33d71c706"
   integrity sha512-Ld23LpXxN6XJayNayD/wcOa6mRKvR2cy1Qk+QHt9SLO/z3K1uglPI+x89JHOmaPzu3vbUkosM7iTjFJ0ab6LeQ==
 
-"@sendbird/uikit-utils@3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@sendbird/uikit-utils/-/uikit-utils-3.0.4.tgz#361ee1ba435864324de37045e9c676aea2f9270d"
-  integrity sha512-umRik5du/dRO+Kf8gDmgi7kRS0rmhdxafkARlT2wb4OxBxQJGEEaLP/HYT38vAuSvRTyEk/Laq0b+wT50uwIxA==
+"@sendbird/uikit-utils@3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@sendbird/uikit-utils/-/uikit-utils-3.1.0.tgz#3e09a2b5147649b659c11cfb217e2425ee5a12ff"
+  integrity sha512-wPO/YVRqYGzaOaCbonRCn3HcsIXPb9nwXE1RXD6fCaCG9J3j2te8+/Sw72wVaYC9YbI3jcAVwDghKKl5556UPQ==
   dependencies:
     date-fns "^2.28.0"
     string.prototype.matchall "^4.0.7"
@@ -4784,10 +4784,10 @@ expo-av@~13.4.1:
   resolved "https://registry.yarnpkg.com/expo-av/-/expo-av-13.4.1.tgz#83029b3202e64bf060f0a7a24591d93bf7ab728c"
   integrity sha512-0K8QEFzZeNGrppzYUs8wOtjOyPPkxzlVYbEHM6WzIQOG1uYYNOJkJB3aQHVFXHmz+AzoHwMrUjcschofwaMNeg==
 
-expo-clipboard@~4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/expo-clipboard/-/expo-clipboard-4.3.0.tgz#19321dabeab3514c6ab6e7e2e39ac51bab47acc6"
-  integrity sha512-FsPv7FFdVCPGT1P9mnOhB7o6wPMI05Bpuchj58ACGEx8mYfA90CLL/sdQFSS7VmQOxdgUh+De3GDJgHq3JvckA==
+expo-clipboard@~4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/expo-clipboard/-/expo-clipboard-4.3.1.tgz#ce6ed35ae31c7fc1aeadb005b8eb9b39a8bb9b40"
+  integrity sha512-WIsjvAsr2+/NZRa84mKxjui1EdPpdKbQIC2LN/KMBNuT7g4GQYL3oo9WO9G/C7doKQ7f7pnfdvO3N6fUnoRoJw==
 
 expo-constants@~14.4.2:
   version "14.4.2"
@@ -4797,15 +4797,22 @@ expo-constants@~14.4.2:
     "@expo/config" "~8.1.0"
     uuid "^3.3.2"
 
-expo-document-picker@~11.5.3:
-  version "11.5.3"
-  resolved "https://registry.yarnpkg.com/expo-document-picker/-/expo-document-picker-11.5.3.tgz#90f23412332ea6ec7ee42fcaaff7ede175114b8e"
-  integrity sha512-nneIdDIKGtU6DQfcF5YJPQdIF2CYug5LapOkktE/0Lc7nXs1O+ejQ8zHLzgbdm2VFymL8d6I6x86sNt8VheBXw==
+expo-document-picker@~11.5.4:
+  version "11.5.4"
+  resolved "https://registry.yarnpkg.com/expo-document-picker/-/expo-document-picker-11.5.4.tgz#11c274d1a2f4aa1f0ca7c0403ca02017a20d832e"
+  integrity sha512-4lpRixi33kjoQQy9lfrGs48yFRMOgBgdnqjYWVFe85WFy/WkEoFC2E8usxcFdrIigtfy9Z+HY3/je4lHEYqyLg==
 
 expo-file-system@~15.4.0, expo-file-system@~15.4.2:
   version "15.4.2"
   resolved "https://registry.yarnpkg.com/expo-file-system/-/expo-file-system-15.4.2.tgz#f18e9d84f06a50eb4084b4a34ca7ca9c5a42f92e"
   integrity sha512-WFaEWuFEuUpETiq85YlhKYJgedccWTjtCMnYGAgyNfCfvnIgfMCVH7dWudGuxhfAcTZqh36OcqtSckbtbhOtyg==
+  dependencies:
+    uuid "^3.4.0"
+
+expo-file-system@~15.4.3:
+  version "15.4.3"
+  resolved "https://registry.yarnpkg.com/expo-file-system/-/expo-file-system-15.4.3.tgz#0cb2464c6e663ad8e8a742d5c538ed8ff1013b11"
+  integrity sha512-HaaCBTUATs2+i7T4jxIvoU9rViAHMvOD2eBaJ1H7xPHlwZlMORjQs7bsNKonR/TQoduxZBJLVZGawvaAJNCH8g==
   dependencies:
     uuid "^3.4.0"
 
@@ -4828,10 +4835,10 @@ expo-image-manipulator@~11.3.0:
   dependencies:
     expo-image-loader "~4.3.0"
 
-expo-image-picker@~14.3.1:
-  version "14.3.1"
-  resolved "https://registry.yarnpkg.com/expo-image-picker/-/expo-image-picker-14.3.1.tgz#96703f9b5ed4728922e05359baf394206eaaf9b7"
-  integrity sha512-05qyPqNtvvUt8fhgVQcsAdLX5iohKIR+Wr/a1JQ57DNWqcu9OucvjhSTKEDzx4wYqHI4ZuPJDwKx0W52r2GQbQ==
+expo-image-picker@~14.3.2:
+  version "14.3.2"
+  resolved "https://registry.yarnpkg.com/expo-image-picker/-/expo-image-picker-14.3.2.tgz#5ae2f36fe518a10c8fe82e5ff2ee735c14817cfc"
+  integrity sha512-xr/YeQMIYheXecWP033F2SPwpBlBR5xVCx7YSfSCTH8Y9pw7Z886agqKGbS9QBVGlzJ5qecJktZ6ASSzeslDVg==
   dependencies:
     expo-image-loader "~4.3.0"
 
@@ -4840,10 +4847,10 @@ expo-keep-awake@~12.3.0:
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-12.3.0.tgz#c42449ae19c993274ddc43aafa618792b6aec408"
   integrity sha512-ujiJg1p9EdCOYS05jh5PtUrfiZnK0yyLy+UewzqrjUqIT8eAGMQbkfOn3C3fHE7AKd5AefSMzJnS3lYZcZYHDw==
 
-expo-media-library@~15.4.0:
-  version "15.4.0"
-  resolved "https://registry.yarnpkg.com/expo-media-library/-/expo-media-library-15.4.0.tgz#9d5c3e43462fac3b043b641d30999317bd9a206a"
-  integrity sha512-or3z2cOnjsm9Azu57bf+ThrceAKsP6PEgoSns8XGLlz/9AwOTOEvbDUqT2nl0w/tWWtkN32x7gt7eYv0H5imFg==
+expo-media-library@~15.4.1:
+  version "15.4.1"
+  resolved "https://registry.yarnpkg.com/expo-media-library/-/expo-media-library-15.4.1.tgz#577efb13d912e28e9c3fcc5022156e204a59b7e8"
+  integrity sha512-lpWcT4pynWcE7TyNMUkLFH4YcueCTnq7UOJYRR0vewPEJeQXwRscka7zBtrhA+RSsJda013Q0615K+5lRLt14Q==
 
 expo-modules-autolinking@1.5.0:
   version "1.5.0"
