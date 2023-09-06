@@ -17,6 +17,9 @@ import {
   createExpoFileService,
   createExpoMediaService,
   createExpoNotificationService,
+  // createExpoPlayerService,
+  // createExpoRecorderService,
+  SendbirdUIKitContainerProps,
 } from "@sendbird/uikit-react-native";
 import { Logger, SendbirdChatSDK } from "@sendbird/uikit-utils";
 
@@ -27,21 +30,30 @@ export const GetSendbirdSDK = () => AppSendbirdSDK;
 export const SetSendbirdSDK = (sdk: SendbirdChatSDK) => (AppSendbirdSDK = sdk);
 
 export const RootStack = createNativeStackNavigator();
-export const NotificationService =
-  createExpoNotificationService(ExpoNotifications);
-export const ClipboardService = createExpoClipboardService(ExpoClipboard);
-export const FileService = createExpoFileService({
-  fsModule: ExpoFS,
-  imagePickerModule: ExpoImagePicker,
-  mediaLibraryModule: ExpoMediaLibrary,
-  documentPickerModule: ExpoDocumentPicker,
-});
-export const MediaService = createExpoMediaService({
-  avModule: ExpoAV,
-  thumbnailModule: ExpoVideoThumbnail,
-  imageManipulator: ExpoImageManipulator,
-  fsModule: ExpoFS,
-});
+export const platformServices: SendbirdUIKitContainerProps["platformServices"] =
+  {
+    clipboard: createExpoClipboardService(ExpoClipboard),
+    notification: createExpoNotificationService(ExpoNotifications),
+    file: createExpoFileService({
+      fsModule: ExpoFS,
+      imagePickerModule: ExpoImagePicker,
+      mediaLibraryModule: ExpoMediaLibrary,
+      documentPickerModule: ExpoDocumentPicker,
+    }),
+    media: createExpoMediaService({
+      avModule: ExpoAV,
+      thumbnailModule: ExpoVideoThumbnail,
+      imageManipulator: ExpoImageManipulator,
+      fsModule: ExpoFS,
+    }),
+    // player: createExpoPlayerService({
+    //   avModule: ExpoAV,
+    // }),
+    // recorder: createExpoRecorderService({
+    //   avModule: ExpoAV,
+    // }),
+  };
+
 export const GetTranslucent = (state = true) => {
   Platform.OS === "android" && StatusBar.setTranslucent(state);
   return Platform.select({ ios: state, android: state });

@@ -6,7 +6,7 @@ import {
   NavigationContainer,
 } from "@react-navigation/native";
 import React, { useEffect } from "react";
-import { AppState, Platform } from "react-native";
+import { AppState } from "react-native";
 
 import {
   SendbirdUIKitContainer,
@@ -20,11 +20,8 @@ import {
 // import LogView from './components/LogView';
 import { APP_ID } from "./env";
 import {
-  ClipboardService,
-  FileService,
   GetTranslucent,
-  MediaService,
-  NotificationService,
+  platformServices,
   RootStack,
   SetSendbirdSDK,
 } from "./factory";
@@ -88,12 +85,7 @@ const App = () => {
         onInitialized: SetSendbirdSDK,
         enableAutoPushTokenRegistration: true,
       }}
-      platformServices={{
-        file: FileService,
-        notification: NotificationService,
-        clipboard: ClipboardService,
-        media: MediaService,
-      }}
+      platformServices={platformServices}
       styles={{
         defaultHeaderTitleAlign: "left", //'center',
         theme: isLightTheme ? LightUIKitTheme : DarkUIKitTheme,

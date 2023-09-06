@@ -1,0 +1,17 @@
+{
+  "version": "v1",
+  "packages": {
+    "@sendbird/uikit-react-native": {
+      "signature": "725c4e0058df148ce117473d26a74d9b"
+    },
+    "@sendbird/uikit-chat-hooks": {
+      "signature": "d76abc93fee3b844aab4db5370bd1c8d"
+    },
+    "@sendbird/uikit-react-native-foundation": {
+      "signature": "0c0cc020ac4edbeacbd4e3e7e2d2e5ba"
+    },
+    "@sendbird/uikit-utils": {
+      "signature": "7cad431892e8ae8b2e1c11b04e82cc59"
+    }
+  }
+}
