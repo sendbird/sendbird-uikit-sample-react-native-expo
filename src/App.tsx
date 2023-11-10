@@ -69,6 +69,9 @@ const App = () => {
     <SendbirdUIKitContainer
       appId={APP_ID}
       uikitOptions={{
+        common: {
+          enableUsingDefaultUserProfile: true,
+        },
         groupChannel: {
           enableMention: true,
         },
