@@ -17,8 +17,8 @@ import {
   createExpoFileService,
   createExpoMediaService,
   createExpoNotificationService,
-  // createExpoPlayerService,
-  // createExpoRecorderService,
+  createExpoPlayerService,
+  createExpoRecorderService,
   SendbirdUIKitContainerProps,
 } from "@sendbird/uikit-react-native";
 import { Logger, SendbirdChatSDK } from "@sendbird/uikit-utils";
@@ -46,12 +46,12 @@ export const platformServices: SendbirdUIKitContainerProps["platformServices"] =
       imageManipulator: ExpoImageManipulator,
       fsModule: ExpoFS,
     }),
-    // player: createExpoPlayerService({
-    //   avModule: ExpoAV,
-    // }),
-    // recorder: createExpoRecorderService({
-    //   avModule: ExpoAV,
-    // }),
+    player: createExpoPlayerService({
+      avModule: ExpoAV,
+    }),
+    recorder: createExpoRecorderService({
+      avModule: ExpoAV,
+    }),
   };
 
 export const GetTranslucent = (state = true) => {
