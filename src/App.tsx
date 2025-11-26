@@ -126,7 +126,7 @@ const Navigations = () => {
     useEffect(() => {
         const sub = AppState.addEventListener("change", async () => {
             const count = await sdk.groupChannel.getTotalUnreadMessageCount();
-            Notifications.setBadgeCountAsync(count);
+            await Notifications.setBadgeCountAsync(count);
         });
         return () => sub.remove();
     }, []);
