@@ -12,22 +12,17 @@ yarn install
 
 Step 2: Fill in your Sendbird application ID in the `APP_ID` field of [`src/env.ts`](src/env.ts)
 
-## Usage
-
-### Expo Go QR
-
-To use Expo Go QR, run the following command:
+Step 3: Generate native projects
 
 ```shell
-yarn start
+npx expo prebuild
 ```
+
+## Usage
 
 ### Android
 
-> **NOTE**: Starting from version @sendbird/uikit-react-native@2.5.0, we no longer support Expo Go on Android with RN `< v0.72`.
-> Please use [EAS Build](https://docs.expo.dev/build/setup/#build-for-android-emulatordevice-or-ios-simulator) or [Prebuild](https://docs.expo.dev/workflow/prebuild/) instead.
-
-To use Android, run the following command:
+To run on Android, execute the following command:
 
 ```shell
 yarn android
@@ -35,21 +30,16 @@ yarn android
 
 ### iOS
 
-To use iOS, run the following command:
+To run on iOS, install CocoaPods dependencies first:
+
+```shell
+cd ios && pod install && cd ..
+```
+
+Then run:
 
 ```shell
 yarn ios
-```
-
-### Web
-
-> **NOTE**: While it is possible to run in a web environment
-> please note that Expo SDK is not fully compatible with web environments and we do not officially support the web. (We do not guarantee functionality related to this.)
-
-To test Web, run the following command:
-
-```shell
-yarn web
 ```
 
 ## Upgrading Expo SDK
@@ -62,7 +52,13 @@ To upgrade Expo SDK, run the following commands:
 
 ```shell
 yarn add expo@latest
-expo install --fix
+npx expo install --fix
+```
+
+After upgrading, regenerate native projects:
+
+```shell
+npx expo prebuild --clean
 ```
 
 Note: Please ensure that you have read and understood the documentation before upgrading Expo SDK.

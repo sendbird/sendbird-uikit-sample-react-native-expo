@@ -1,84 +1,83 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import * as ExpoClipboard from "expo-clipboard";
 import * as ExpoDocumentPicker from "expo-document-picker";
 import * as ExpoFS from "expo-file-system";
 import * as ExpoImagePicker from "expo-image-picker";
 import * as ExpoMediaLibrary from "expo-media-library";
 import * as ExpoNotifications from "expo-notifications";
-import * as ExpoAV from "expo-av";
+import * as ExpoAudio from "expo-audio";
+import * as ExpoVideo from "expo-video";
 import * as ExpoVideoThumbnail from "expo-video-thumbnails";
 import * as ExpoImageManipulator from "expo-image-manipulator";
 
 import axios from "axios";
-import { Platform, StatusBar } from "react-native";
+import {Platform, StatusBar} from "react-native";
 
 import {
-  createExpoClipboardService,
-  createExpoFileService,
-  createExpoMediaService,
-  createExpoNotificationService,
-  createExpoPlayerService,
-  createExpoRecorderService,
-  SendbirdUIKitContainerProps,
+    SendbirdUIKitContainerProps,
+    createExpoClipboardService,
+    createExpoFileService,
+    createExpoMediaService,
+    createExpoNotificationService,
+    createExpoPlayerService,
+    createExpoRecorderService,
 } from "@sendbird/uikit-react-native";
-import { Logger, SendbirdChatSDK } from "@sendbird/uikit-utils";
+import {Logger, SendbirdChatSDK} from "@sendbird/uikit-utils";
 
-import { APP_ID } from "../env";
+import {APP_ID} from "../env";
 
 let AppSendbirdSDK: SendbirdChatSDK;
 export const GetSendbirdSDK = () => AppSendbirdSDK;
 export const SetSendbirdSDK = (sdk: SendbirdChatSDK) => (AppSendbirdSDK = sdk);
 
 export const RootStack = createNativeStackNavigator();
-export const platformServices: SendbirdUIKitContainerProps["platformServices"] =
-  {
+export const platformServices: SendbirdUIKitContainerProps['platformServices'] = {
     clipboard: createExpoClipboardService(ExpoClipboard),
     notification: createExpoNotificationService(ExpoNotifications),
     file: createExpoFileService({
-      fsModule: ExpoFS,
-      imagePickerModule: ExpoImagePicker,
-      mediaLibraryModule: ExpoMediaLibrary,
-      documentPickerModule: ExpoDocumentPicker,
+        fsModule: ExpoFS,
+        imagePickerModule: ExpoImagePicker,
+        mediaLibraryModule: ExpoMediaLibrary,
+        documentPickerModule: ExpoDocumentPicker,
     }),
     media: createExpoMediaService({
-      avModule: ExpoAV,
-      thumbnailModule: ExpoVideoThumbnail,
-      imageManipulator: ExpoImageManipulator,
-      fsModule: ExpoFS,
+        avModule: ExpoVideo,
+        thumbnailModule: ExpoVideoThumbnail,
+        imageManipulator: ExpoImageManipulator,
+        fsModule: ExpoFS,
     }),
     player: createExpoPlayerService({
-      avModule: ExpoAV,
+        avModule: ExpoAudio,
     }),
     recorder: createExpoRecorderService({
-      avModule: ExpoAV,
+        avModule: ExpoAudio,
     }),
-  };
-
+};
 export const GetTranslucent = (state = true) => {
-  Platform.OS === "android" && StatusBar.setTranslucent(state);
-  return Platform.select({ ios: state, android: state });
+    Platform.OS === "android" && StatusBar.setTranslucent(state);
+    return Platform.select({ios: state, android: state});
 };
 
 const createSendbirdFetcher = (appId: string, apiToken: string) => {
-  const client = axios.create({
-    baseURL: `https://api-${appId}.sendbird.com/v3`,
-    headers: { "Api-Token": apiToken },
-  });
-  client.interceptors.response.use((res) => res.data);
-  return client;
+    const client = axios.create({
+        baseURL: `https://api-${appId}.sendbird.com/v3`,
+        headers: {"Api-Token": apiToken},
+    });
+    client.interceptors.response.use((res) => res.data);
+    return client;
 };
 
 const createSendbirdAPI = (appId: string, apiToken: string) => {
-  const fetcher = createSendbirdFetcher(appId, apiToken);
-  const MIN = 60 * 1000;
-  return {
-    getSessionToken(
-      userId: string,
-      expires_at = Date.now() + 10 * MIN
-    ): Promise<{ user_id: string; token: string; expires_at: number }> {
-      return fetcher.post(`/users/${userId}/token`, { expires_at });
-    },
-  };
+    const fetcher = createSendbirdFetcher(appId, apiToken);
+    const MIN = 60 * 1000;
+    return {
+        getSessionToken(
+            userId: string,
+            expires_at = Date.now() + 10 * MIN
+        ): Promise<{ user_id: string; token: string; expires_at: number }> {
+            return fetcher.post(`/users/${userId}/token`, {expires_at});
+        },
+    };
 };
 
 /**
@@ -89,16 +88,16 @@ const createSendbirdAPI = (appId: string, apiToken: string) => {
 export const SendbirdAPI = createSendbirdAPI(APP_ID, "API_TOKEN");
 
 if (__DEV__) {
-  const PromiseLogger = Logger.create("debug");
-  PromiseLogger.setTitle("[UIKit/promiseUnhandled]");
-  const opts =
-    require("react-native/Libraries/promiseRejectionTrackingOptions").default;
+    const PromiseLogger = Logger.create("debug");
+    PromiseLogger.setTitle("[UIKit/promiseUnhandled]");
+    const opts =
+        require("react-native/Libraries/promiseRejectionTrackingOptions").default;
 
-  // const originHandler = opts.onUnhandled;
-  opts.onUnhandled = (_: number, rejection = { code: undefined }) => {
-    PromiseLogger.log(rejection, rejection.code ?? "");
-    // originHandler(_, rejection);
-  };
+    // const originHandler = opts.onUnhandled;
+    opts.onUnhandled = (_: number, rejection = {code: undefined}) => {
+        PromiseLogger.log(rejection, rejection.code ?? "");
+        // originHandler(_, rejection);
+    };
 
-  require("promise/setimmediate/rejection-tracking").enable(opts);
+    require("promise/setimmediate/rejection-tracking").enable(opts);
 }
