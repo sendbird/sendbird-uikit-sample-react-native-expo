@@ -1,8 +1,6 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useState } from 'react';
-
 import { useAsyncLayoutEffect } from '@sendbird/uikit-utils';
-
+import { mmkv } from '../App';
 interface SimpleCredential {
   userId: string;
   nickname?: string;
@@ -11,20 +9,20 @@ interface SimpleCredential {
 interface CredentialStorageInterface {
   get(): Promise<SimpleCredential | null>;
   set(cred: SimpleCredential): Promise<void>;
-  delete(): Promise<void>;
+  delete(): boolean;
 }
 
 class CredentialStorage implements CredentialStorageInterface {
   private STORAGE_KEY = 'sendbird@credential';
   async get(): Promise<SimpleCredential | null> {
-    const cred = await AsyncStorage.getItem(this.STORAGE_KEY);
+    const cred = mmkv.getString(this.STORAGE_KEY);
     return cred ? JSON.parse(cred) : null;
   }
   async set(cred: SimpleCredential): Promise<void> {
-    return AsyncStorage.setItem(this.STORAGE_KEY, JSON.stringify(cred));
+    return mmkv.set(this.STORAGE_KEY, JSON.stringify(cred));
   }
-  delete(): Promise<void> {
-    return AsyncStorage.removeItem(this.STORAGE_KEY);
+  delete(): boolean {
+    return mmkv.remove(this.STORAGE_KEY);
   }
 }
 

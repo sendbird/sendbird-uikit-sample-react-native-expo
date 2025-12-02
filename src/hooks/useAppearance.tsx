@@ -1,8 +1,9 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useLayoutEffect, useState } from 'react';
 import { Appearance } from 'react-native';
 
-import { NOOP, useAsyncLayoutEffect } from '@sendbird/uikit-utils';
+import { NOOP } from '@sendbird/uikit-utils';
+
+import { mmkv } from '../App';
 
 const DEFAULT_APPEARANCE = 'light';
 
@@ -13,21 +14,21 @@ const AppearanceContext = createContext<{ scheme: 'light' | 'dark'; setScheme: (
 
 const SchemeManager = {
   KEY: 'sendbird@scheme',
-  async get() {
-    return ((await AsyncStorage.getItem(SchemeManager.KEY)) ?? Appearance.getColorScheme() ?? DEFAULT_APPEARANCE) as
+  get() {
+    return (mmkv.getString(SchemeManager.KEY) ?? Appearance.getColorScheme() ?? DEFAULT_APPEARANCE) as
       | 'light'
       | 'dark';
   },
-  async set(scheme: 'light' | 'dark') {
-    await AsyncStorage.setItem(SchemeManager.KEY, scheme);
+  set(scheme: 'light' | 'dark') {
+    mmkv.set(SchemeManager.KEY, scheme);
   },
 };
 
 export const AppearanceProvider = ({ children }: React.PropsWithChildren) => {
   const [scheme, setScheme] = useState<'light' | 'dark'>(Appearance.getColorScheme() ?? DEFAULT_APPEARANCE);
 
-  useAsyncLayoutEffect(async () => {
-    setScheme(await SchemeManager.get());
+  useLayoutEffect(() => {
+    setScheme(SchemeManager.get());
   }, []);
 
   // Handle scheme from Settings screen.
@@ -40,9 +41,9 @@ export const AppearanceProvider = ({ children }: React.PropsWithChildren) => {
     <AppearanceContext.Provider
       value={{
         scheme,
-        setScheme: async (value) => {
+        setScheme: (value) => {
           setScheme(value);
-          await SchemeManager.set(value);
+          SchemeManager.set(value);
         },
       }}
     >
@@ -55,7 +56,7 @@ const useAppearance = () => {
   return useContext(AppearanceContext);
 };
 
-export const withAppearance = (Component: (props: object) => JSX.Element) => {
+export const withAppearance = (Component: (props: object) => React.ReactElement) => {
   return (props: object) => (
     <AppearanceProvider>
       <Component {...props} />
