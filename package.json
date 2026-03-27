@@ -51,5 +51,9 @@
     "@types/react": "~19.1.10",
     "typescript": "~5.9.2"
   },
-  "private": true
+  "private": true,
+  "resolutions": {
+    "@babel/traverse": "^7.23.2",
+    "svgo": "^2.8.1"
+  }
 }
