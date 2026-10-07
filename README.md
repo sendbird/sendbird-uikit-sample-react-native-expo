@@ -32,6 +32,8 @@ yarn android
 
 ### iOS
 
+> Expo SDK 57 does not compile with Xcode 26.1.1 (Swift 6.2.1). Use a newer Xcode.
+
 To run on iOS, install CocoaPods dependencies first:
 
 ```shell
