@@ -7,6 +7,12 @@ import { mmkv } from '../App';
 
 const DEFAULT_APPEARANCE = 'light';
 
+// Appearance.getColorScheme() can also return 'unspecified'.
+const getSystemScheme = (): 'light' | 'dark' => {
+  const scheme = Appearance.getColorScheme();
+  return scheme === 'light' || scheme === 'dark' ? scheme : DEFAULT_APPEARANCE;
+};
+
 const AppearanceContext = createContext<{ scheme: 'light' | 'dark'; setScheme: (val: 'light' | 'dark') => void }>({
   scheme: DEFAULT_APPEARANCE,
   setScheme: NOOP,
@@ -15,7 +21,7 @@ const AppearanceContext = createContext<{ scheme: 'light' | 'dark'; setScheme: (
 const SchemeManager = {
   KEY: 'sendbird@scheme',
   get() {
-    return (mmkv.getString(SchemeManager.KEY) ?? Appearance.getColorScheme() ?? DEFAULT_APPEARANCE) as
+    return (mmkv.getString(SchemeManager.KEY) ?? getSystemScheme()) as
       | 'light'
       | 'dark';
   },
@@ -25,7 +31,7 @@ const SchemeManager = {
 };
 
 export const AppearanceProvider = ({ children }: React.PropsWithChildren) => {
-  const [scheme, setScheme] = useState<'light' | 'dark'>(Appearance.getColorScheme() ?? DEFAULT_APPEARANCE);
+  const [scheme, setScheme] = useState<'light' | 'dark'>(getSystemScheme);
 
   useLayoutEffect(() => {
     setScheme(SchemeManager.get());

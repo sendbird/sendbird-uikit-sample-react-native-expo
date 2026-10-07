@@ -2,6 +2,8 @@
 
 This sample demonstrates how to use Sendbird UIKit for React Native with Expo.
 
+It is built with Expo SDK 57 (React Native 0.86).
+
 ## Installation
 
 Step 1: Install dependencies
@@ -29,6 +31,8 @@ yarn android
 ```
 
 ### iOS
+
+> Expo SDK 57 does not compile with Xcode 26.1.1 (Swift 6.2.1). Use a newer Xcode.
 
 To run on iOS, install CocoaPods dependencies first:
 
