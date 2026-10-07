@@ -11,13 +11,14 @@ import { navigationRef, Routes, runAfterAppReady } from "./navigation";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
-    shouldShowAlert: true,
+    shouldShowBanner: true,
+    shouldShowList: true,
     shouldPlaySound: true,
     shouldSetBadge: true,
   }),
 });
 export const onForeground = () => {
-  const onNotification = (notification: Notifications.NotificationResponse) => {
+  const onNotification = (notification: Notifications.NotificationResponse | null) => {
     const data = notification?.notification?.request?.content?.data as any;
     if (data && isSendbirdNotification(data)) {
       const sendbird = parseSendbirdNotification(data);
@@ -32,12 +33,8 @@ export const onForeground = () => {
     }
   };
 
-  const checkAppOpenedWithNotification = async () => {
-    const response = await Notifications.getLastNotificationResponseAsync();
-    onNotification(response);
-  };
-
-  checkAppOpenedWithNotification();
+  // Check if the app was opened with a notification
+  onNotification(Notifications.getLastNotificationResponse());
   return Notifications.addNotificationResponseReceivedListener(onNotification)
     .remove;
 };
