@@ -1,4 +1,4 @@
-import format from 'date-fns/format';
+import { format } from 'date-fns/format';
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Animated, ScrollView, Text, TouchableOpacity, View, useWindowDimensions } from 'react-native';
 
